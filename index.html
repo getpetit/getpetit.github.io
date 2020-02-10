@@ -1,86 +1,150 @@
+<!doctype html>
 <html>
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157899018-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-157899018-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-157899018-1');
     </script>
 
-    <title>Petit Youtube Music</title>
-
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
+    <title>Petit Youtube Music Player</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/style.css">
 </head>
 
 <body>
-    <!-- <header>
-        <div class="navbar navbar-dark bg-dark shadow-sm text-center">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <strong>Petit Project</strong>
-            </a>
-        </div>
-    </header> -->
-
     <main role="main" class="container">
-        <div class="">
-            <p>&nbsp;</p>
-            <!-- <p>&nbsp;</p> -->
-            <h1>Petit Youtube Music Player</h1>
-            <p class="lead">
-                메뉴 바에서 Youtube Music을 쓸 수 있는 Petit Youtube Music Player.<br />
-                OS X에서 구동할 수 있습니다. <br />
-            </p>
-            <a
-                type="button" class="btn btn-primary btn-lg" href="./files/Petit Youtube Music-0.0.1.dmg" target="_blank"
-                onclick="gtag('event', 'download-dmg', 'v0.0.1');">.dmg 파일 다운로드</a>
+        
+<div class="">
+
+    <p>&nbsp;</p>
+
+    <div class="dropdown show">
+        <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            언어 선택
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/">English</a>
+            <a class="dropdown-item" href="/ko">한국어</a>
         </div>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <h1>Petit Youtube Music Player</h1>
+    <p class="lead">
+        Use Youtube Music in menubar of OS X by Petit Youtube Music Player.
+    </p>
+
+    <a class="btn btn-primary btn-lg" href="/static/files/dmg/Petit Youtube Music-0.0.1.dmg" target="_blank" onclick="gtag('event', 'download-dmg', 'v0.0.1');">Download Latest Version</a>
+</div>
+
+<div class="">
+    <p>&nbsp;</p>
+    <h3>Screenshot</h3>
+
+    
+    
+    You can launch YouTube Music at any time from the menu bar.<br />
+    <img src="/static/images/feature/menubar.png" class="img-fluid rounded" alt="" style="max-width: 600px">
+    
+    
+</div>
+
+<div class="">
+    <p>&nbsp;</p>
+    <h3>Release Notes</h3>
+
+    
+    
+    <h5 class="text-monospace">
+        v0.0.1
+        <small>(2020-02-07)</small>
+
+        <a class="badge badge-primary font-weight-normal" target="_blank" href="/static/files/dmg/Petit Youtube Music-0.0.1.dmg">.dmg</a>
+    </h5>
+
+    <ul>
+<li>Back / Forward / Refresh buttons are added at the top of the screen.</li>
+<li>Normal shutdown function is added by right clicking on the icon in the menu bar.</li>
+</ul>
+
+    
+    
+</div>
+
+<div class="">
+    <p>&nbsp;</p>
+    <h3>Credits</h3>
+<h5>Contributors</h5>
+<ul>
+<li>Joonyoung Yi [<a href="https://www.linkedin.com/in/joonyoungyi/">LinkedIn</a>] [<a href="https://github.com/JoonyoungYi">Github</a>]</li>
+<li>Kangmin Ahn [<a href="https://www.linkedin.com/in/kang-min-ahn-5615b9106/">LinkedIn</a>] [<a href="https://github.com/saltylight">Github</a>]</li>
+<li>If you enjoy this program, would you buy us a cup of coffee? (See <a href="https://www.buymeacoffee.com/fbt90CH">buymeacoffee.com</a>)</li>
+</ul>
+<h5>Special Thanks To</h5>
+<ul>
+<li>This product was inspired by the unofficial <a href="https://macnews.tistory.com/1487">Bugs Music Player</a> created by a high school student. (<a href="http://www.bloter.net/archives/162026">Related article</a>)</li>
+</ul>
+
+</div>
+
+<div class="">
+    <p>&nbsp;</p>
+    <h3>License</h3>
+<ul>
+<li>This product is free. It will be available for free after the beta. You can use it freely regardless of personal or business purposes.</li>
+<li>Petit Youtube Music Player is a third-party application from Youtube, not a site operated by Youtube.</li>
+</ul>
+
+</div>
+
+<div class="">
+    <p>&nbsp;</p>
+    <h3>Q&amp;A</h3>
+<ul>
+<li>Email me! <a href="./joonyoung.yi@kaist.ac.kr">joonyoung.yi@kaist.ac.kr</a></li>
+</ul>
+
+    <p>&nbsp;</p>
+</div>
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//joonyoungyi.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
 
 
-        <div class="">
-            <p>&nbsp;</p>
-            <h3>스크린샷</h3>
-
-            <figure class="figure">
-                <img src="./asset/screenshot.png" class="figure-img img-fluid rounded" alt="...">
-                <figcaption class="figure-caption">메뉴바에서 언제든지 유튜브 뮤직을 실행할 수 있습니다.</figcaption>
-            </figure>
-        </div>
-
-        <div class="">
-            <p>&nbsp;</p>
-            <h3>릴리즈 노트</h3>
-
-            <h5 class="text-monospace">v0.0.1 <small>(2020-02-07)</small></h5>
-            <ul class="text-monospace">
-                <li>화면 상단 뒤로가기/앞으로가기/새로고침 버튼 추가.</li>
-                <li>메뉴바 내 아이콘 오른쪽 버튼 클릭을 통한 정상 종료 기능 추가.</li>
-            </ul>
-        </div>
-
-        <div class="">
-            <p>&nbsp;</p>
-            <h3>기타</h3>
-
-            <ul class="text-monospace">
-                <li>문의: <span class="text-monospace">joonyoung.yi@kaist.ac.kr</span></li>
-                <li>본 제품은 무료입니다. 기업용 개인용 관계없이 자유롭게 사용하실 수 있습니다.</li>
-                <li>본 제품은 고등학생이 만든 비공식 <a href="https://macnews.tistory.com/1487">맥용 벅스 플레이어</a>에 영감을 받아 제작되었습니다. (<a href="http://www.bloter.net/archives/162026">관련기사</a>)</li>
-                <li>Petit Youtube Music Player는 Youtube의 Third-Party 애플리케이션으로, Youtube에서 운영하는 사이트가 아닙니다.</li>
-            </ul>
-
-            <p>&nbsp;</p>
-        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -1,2 +1,0 @@
-# getpetit.github.io
-Homepage
