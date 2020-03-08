@@ -2,81 +2,127 @@
 <html>
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157899018-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157899018-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-157899018-1');
-    </script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-157899018-1');
+  </script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
 
-    <title>Petit Youtube Music Player</title>
+  <title>Petit Youtube Music Player</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./static/style.css">
 
-    <script data-ad-client="ca-pub-5779215398308083" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script data-ad-client="ca-pub-5779215398308083" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
-    <main role="main" class="container">
-        
-<div class="">
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <strong class="navbar-brand">Petit Youtube Music Player</strong>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <p>&nbsp;</p>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link" href="#features">Feature</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#release-notes">Release Notes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#credits">Credits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#license">License</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#feedback">Feedback</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        <div class="dropdown show">
+          <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Language
+          </a>
 
-    <div class="dropdown show">
-        <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            언어 선택
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href="/">English</a>
             <a class="dropdown-item" href="/ko">한국어</a>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
+</nav>
 
-    <p>&nbsp;</p>
 
-    <h1>Petit Youtube Music Player</h1>
+<div class="main-description">
+
+  <div class="container">
+    <h1>The Youtube Music player in the OS X menubar.</h1>
     <p class="lead">
-        Use Youtube Music in menubar of OS X by Petit Youtube Music Player.
+      Faster, easier access to Youtube Music from the menubar.
     </p>
 
     <a class="btn btn-primary btn-lg" href="/static/files/dmg/Petit Youtube Music-0.0.3.dmg" target="_blank" onclick="gtag('event', 'download-dmg', 'v0.0.1');">Download Latest Version</a>
+  </div>
 </div>
 
-<div class="">
+<main class="container">
+  <div id="features" class="">
     <p>&nbsp;</p>
-    <h3>Screenshot</h3>
-</div>
-
-
-<div class="col-12">
+    <h3>Feature</h3>
+  </div>
+  
+  
+  <div class="col-12">
     <p>You can launch YouTube Music at any time from the menu bar.</p>
-</div>
-<div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-6">
+  </div>
+  <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-6">
     <img src="/static/images/feature/menubar.png" class="img-fluid rounded" alt="">
-</div>
+  </div>
+  
+  
 
-
-
-<div class="">
+  <div id="release-notes" class="">
     <p>&nbsp;</p>
     <h3>Release Notes</h3>
 
     
     
     <h5 class="text-monospace">
-        v0.0.3
-        <small>(2020-02-13)</small>
+      v0.0.4
+      <small>(To be released)</small>
+    </h5>
+
+    <ul>
+<li>Keyboard shortcuts are supported (Toggle window, Toggle Play &amp; Stop, Play previous song, Play next song)</li>
+<li>Added direct buttons to play / pause in the menu bar, play previous song, play next song.</li>
+<li>Our Apple Developer account is connected.</li>
+<li>English is supported.</li>
+<li>Bug fixes and UI improvements.</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.3
+      <small>(2020-02-13)</small>
     </h5>
 
     <ul>
@@ -85,8 +131,8 @@
 
     
     <h5 class="text-monospace">
-        v0.0.2
-        <small>(2020-02-10)</small>
+      v0.0.2
+      <small>(2020-02-10)</small>
     </h5>
 
     <ul>
@@ -95,8 +141,8 @@
 
     
     <h5 class="text-monospace">
-        v0.0.1
-        <small>(2020-02-07)</small>
+      v0.0.1
+      <small>(2020-02-07)</small>
     </h5>
 
     <ul>
@@ -106,12 +152,13 @@
 
     
     
-</div>
+  </div>
 
-<div class="">
+  <div id="credits" class="">
     <p>&nbsp;</p>
     <h3>Credits</h3>
-<h5>Contributors</h5>
+
+    <h5>Contributors</h5>
 <ul>
 <li>Joonyoung Yi [<a href="https://www.linkedin.com/in/joonyoungyi/">LinkedIn</a>] [<a href="https://github.com/JoonyoungYi">Github</a>]</li>
 <li>Kangmin Ahn [<a href="https://www.linkedin.com/in/kang-min-ahn-5615b9106/">LinkedIn</a>] [<a href="https://github.com/saltylight">Github</a>]</li>
@@ -122,29 +169,31 @@
 <li>This product was inspired by the unofficial <a href="https://macnews.tistory.com/1487">Bugs Music Player</a> created by a high school student. (<a href="http://www.bloter.net/archives/162026">Related article</a>)</li>
 </ul>
 
-</div>
+  </div>
 
-<div class="">
+  <div id="license" class="">
     <p>&nbsp;</p>
     <h3>License</h3>
-<ul>
+
+    <ul>
 <li>This product is free. It will be available for free after the beta. You can use it freely regardless of personal or business purposes.</li>
 <li>Petit Youtube Music Player is a third-party application from Youtube, not a site operated by Youtube.</li>
 </ul>
 
-</div>
+  </div>
 
-<div class="">
+  <div id="feedback" class="">
     <p>&nbsp;</p>
-    <h3>Q&amp;A</h3>
-<ul>
+    <h3>Feedback</h3>
+
+    <ul>
 <li>Please leave comments on feature suggestions and bug reports at the bottom. Email any other inquiries! <a href="./joonyoung.yi@kaist.ac.kr">joonyoung.yi@kaist.ac.kr</a></li>
 </ul>
 
     <p>&nbsp;</p>
-</div>
+  </div>
 
-<div class="comments">
+  <div class="comments">
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function() { this.page.identifier = "/"; this.page.url = "http://getpetit.github.io/"; };
@@ -160,13 +209,13 @@
     rel="nofollow">comments powered by Disqus.</a>
 </noscript>
 </div>
+</main>
 
 
-    </main>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 

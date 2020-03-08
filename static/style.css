@@ -1,3 +1,16 @@
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.main-description {
+  background: #F8F9FA;
+  padding-top: 48px;
+  padding-bottom: 56px;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #B5BDC6;
+}
+
 /* body {
     font-family: 'Verdana', sans-serif;
     margin: 50px 25px;
