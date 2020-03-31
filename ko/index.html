@@ -134,13 +134,42 @@
     
     <h5 class="text-monospace">
       v0.0.10
+      <small>(2020-03-31)</small>
+    </h5>
+
+    <ul>
+<li>지금 재생 중 기능 내 재생 시간 변경 기능 지원 종료</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.9
       <small>(2020-03-30)</small>
     </h5>
 
     <ul>
-<li>다시 시작하기 재지원</li>
-<li>지금 재생 중 기능 내 재생 시간 변경 기능 지원 종료</li>
-<li>오토업데이터 지원</li>
+<li>재시작 재지원</li>
+<li>마이너 버그 픽스</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.8
+      <small>(2020-03-29)</small>
+    </h5>
+
+    <ul>
+<li>자동 업데이트 버그 수정</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.7
+      <small>(2020-03-28)</small>
+    </h5>
+
+    <ul>
+<li>자동 업데이트 추가</li>
 </ul>
 
     
@@ -236,32 +265,37 @@
 
     <ul style="list-style: none;">
       <li>
+        <a target="_blank" href="https://www.buymeacoffee.com/petitakm" onclick="gtag('event', 'buymeacoffee', {});">
+          <img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 170px !important;" >
+        </a>
 
-        <form style="display:inline; height: 60px;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="on0" value="Support Options">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onclick="gtag('event', 'paypal', {});">
           <input type="hidden" name="cmd" value="_s-xclick">
           <input type="hidden" name="hosted_button_id" value="V749YMW7J58ML">
+          <table>
+          <!-- <tr>
+            <td><input type="hidden" name="on0" value="Support Options">Support Options</td>
+          </tr> -->
+          <tr>
+            <td>
+              <select name="os0">
+                <option value="Coffee * 1">Coffee * 1 $3.00 USD</option>
+                <option value="Coffee * 2">Coffee * 2 $6.00 USD</option>
+                <option value="Coffee * 3">Coffee * 3 $9.00 USD</option>
+              </select>
+          </td>
+          </tr>
+          </table>
           <input type="hidden" name="currency_code" value="USD">
-
-          <select name="os0">
-            <option value="Coffee * 1">Coffee * 1 $3.00 USD</option>
-            <option value="Coffee * 2">Coffee * 2 $6.00 USD</option>
-            <option value="Coffee * 3">Coffee * 3 $9.00 USD</option>
-          </select>
-
           <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
           <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
         </form>
 
-        <a target="_blank" href="https://www.buymeacoffee.com/petitakm">
-          <img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 170px !important;" >
-        </a>
-
-        <a target="_blank" href="/static/images/support/kakao-pay-qr.jpeg">
+        <a target="_blank" href="/static/images/support/kakao-pay-qr.jpeg" onclick="gtag('event', 'kakaopay', {});">
           <img src="/static/images/support/kakao-pay.jpg" style="height: 40px !important;width: 100px; margin-left: 8px; !important;" >
         </a>
 
-        <a target="_blank" href="/static/images/support/toss-qr.jpeg">
+        <a target="_blank" href="/static/images/support/toss-qr.jpeg" onclick="gtag('event', 'toss', {});">
           <img src="/static/images/support/toss.png" style="height: 40px !important;width: 118px; margin-left: 8px; !important;" >
         </a>
       </li>
