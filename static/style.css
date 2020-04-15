@@ -11,6 +11,8 @@
   border-color: #B5BDC6;
 }
 
+.round { border-radius: 50%; }
+
 /* body {
     font-family: 'Verdana', sans-serif;
     margin: 50px 25px;
