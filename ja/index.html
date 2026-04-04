@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-08BTXEH8SS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-08BTXEH8SS');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <title>Petit Player</title>
+  <meta name="description" content="Petit Player — macOSメニューバーで使える無料YouTube Musicプレイヤー。グローバルショートカット、PiP、メディアキー対応。">
+  <meta property="og:title" content="Petit Player">
+  <meta property="og:description" content="Petit Player — macOSメニューバーで使える無料YouTube Musicプレイヤー。グローバルショートカット、PiP、メディアキー対応。">
+  <meta property="og:image" content="https://getpetit.github.io/static/apple-touch-icon.png">
+  <meta property="og:url" content="https://getpetit.github.io/ja/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Petit Player">
+  <meta name="twitter:description" content="Petit Player — macOSメニューバーで使える無料YouTube Musicプレイヤー。グローバルショートカット、PiP、メディアキー対応。">
+  <meta name="twitter:image" content="https://getpetit.github.io/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://getpetit.github.io/ja/">
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+
+  <script data-ad-client="ca-pub-5779215398308083" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <strong class="navbar-brand">Petit Player</strong>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link" href="#features">機能</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#release-notes">リリースノート</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#credits">クレジット</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#license">ライセンス</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#feedback">フィードバック</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <div class="dropdown show">
+          <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            言語
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/">English</a>
+            <a class="dropdown-item" href="/ko">한국어</a>
+            <a class="dropdown-item" href="/ja">日本語</a>
+            <a class="dropdown-item" href="/zh-Hans">简体中文</a>
+            <a class="dropdown-item" href="/es">Español</a>
+            <a class="dropdown-item" href="/de">Deutsch</a>
+            <a class="dropdown-item" href="/pt-BR">Português</a>
+            <a class="dropdown-item" href="/fr">Français</a>
+            <a class="dropdown-item" href="/tr">Türkçe</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="main-description">
+
+  <div class="container">
+    <h1>OS Xメニューバーで使えるYoutube Musicプレイヤー。</h1>
+    <p class="lead">
+      メニューバーからYoutube Musicにすばやく簡単にアクセス。
+    </p>
+
+    <a class="btn btn-primary btn-lg" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.1/Petit-Player-0.1.1.dmg"
+      onclick="gtag('event', 'download-dmg', {'version': 'v0.1.1'});">最新バージョンをダウンロード</a>
+  </div>
+</div>
+
+<main class="container">
+  <div id="features" class="">
+    <p>&nbsp;</p>
+    <h3>機能</h3>
+  </div>
+  
+  
+  <div class="col-12">
+    <p>メニューバーからいつでもどこでも、どんな作業中でもプレイヤーに直接アクセスできます。</p>
+  </div>
+  
+  <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-6">
+    <img src="/static/images/feature/menubar-fast.png" class="img-fluid rounded" alt="">
+    <br /> &nbsp;
+  </div>
+  
+  
+  <div class="col-12">
+    <p>PIP（Picture in Picture）機能で、何をしていてもYoutube Musicを楽しめます。</p>
+  </div>
+  
+  
+  <div class="col-12">
+    <p>プレイヤーを開かずに、メニューバーから直接再生状態を変更できます。</p>
+  </div>
+  
+  
+  <div class="col-12">
+    <p>OS Xネイティブのメディアキーに対応。ホットキーでどこからでもプレイヤーのオン・オフや再生状態の変更が可能です。</p>
+  </div>
+  
+  
+  <div class="col-12">
+    <p>現在、Youtube Musicのみ対応しています。</p>
+  </div>
+  
+  
+  <div class="col-12">
+    <p>9言語対応：英語、韓国語、日本語、簡体字中国語、スペイン語、ドイツ語、ポルトガル語、フランス語、トルコ語。</p>
+  </div>
+  
+  
+  
+
+  <div id="release-notes" class="">
+    <p>&nbsp;</p>
+    <h3>リリースノート</h3>
+
+    
+    
+    <h5 class="text-monospace">
+      v0.1.1
+      <small>(2026-04-05)</small>
+    </h5>
+
+    <ul>
+<li>キーボードショートカットをカスタマイズできるようになりました。設定 → キーボードショートカット → Customize Shortcuts...</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.1.0
+      <small>(2026-04-04)</small>
+    </h5>
+
+    <ul>
+<li>ElectronからネイティブSwift/AppKitで完全に書き直し。より軽量で高速に。</li>
+<li>PiPを改善。より大きなコントロールボタン、高画質アートワーク、アーティスト名表示。</li>
+<li>メディアキー（再生/一時停止、次の曲、前の曲）に対応。</li>
+<li>メニューバーのシャッフル/リピートアイコンがアクティブ/非アクティブ状態を表示。</li>
+<li>ワイドモードを追加。設定からプレイヤーウィンドウをデフォルト幅以上に拡張可能。</li>
+<li>キーボードショートカットを<code>Ctrl+Option</code>の組み合わせに変更（他のアプリとの競合を回避）。</li>
+<li>内蔵ブラウザでGoogleログインができない場合のために、右クリックメニューに「Chromeからログインをインポート」を追加。</li>
+<li>9言語対応：英語、韓国語、日本語、簡体字中国語、スペイン語、ドイツ語、ポルトガル語、フランス語、トルコ語。</li>
+<li>広告ブロック（AdBlock）を削除。</li>
+<li>曲変更通知を削除。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.12
+      <small>(2020-05-17)</small>
+    </h5>
+
+    <ul>
+<li>広告ブロックの無限ローディング問題を修正。</li>
+<li>自動再生の問題を修正。</li>
+<li>広告ブロックのローディング時間を改善。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.11
+      <small>(2020-04-23)</small>
+    </h5>
+
+    <ul>
+<li>PIPウィンドウのサイズ変更に対応。</li>
+<li>PIPウィンドウにマウスを合わせた時のみコントロールボタンを表示。</li>
+<li>アプリアイコンを変更。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.10
+      <small>(2020-03-31)</small>
+    </h5>
+
+    <ul>
+<li>「再生中」での再生時間変更機能のサポートを終了。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.9
+      <small>(2020-03-30)</small>
+    </h5>
+
+    <ul>
+<li>再起動の再サポート。</li>
+<li>軽微なバグ修正。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.8
+      <small>(2020-03-29)</small>
+    </h5>
+
+    <ul>
+<li>自動アップデートの軽微な修正。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.7
+      <small>(2020-03-28)</small>
+    </h5>
+
+    <ul>
+<li>自動アップデートに対応。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.6
+      <small>(2020-03-27)</small>
+    </h5>
+
+    <ul>
+<li>「再生中」での再生時間変更に対応（サイドバーにも対応）。</li>
+<li>曲が変わった際の通知に対応。</li>
+<li>リピート状態の変更に対応。</li>
+<li>ドラッグによるバグを修正。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.5
+      <small>(2020-03-20)</small>
+    </h5>
+
+    <ul>
+<li>オフラインモードに対応。</li>
+<li>バグ修正。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.4
+      <small>(2020-03-15)</small>
+    </h5>
+
+    <ul>
+<li>広告ブロックに対応。</li>
+<li>PIP（Picture in Picture）に対応。</li>
+<li>キーボードショートカットに対応（ウィンドウの切替、再生/停止の切替、前の曲、次の曲）。</li>
+<li>メニューバーに再生/一時停止、前の曲、次の曲のボタンを追加。</li>
+<li>英語に対応。</li>
+<li>バグ修正とUI改善。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.3
+      <small>(2020-02-13)</small>
+    </h5>
+
+    <ul>
+<li>ログイン時の自動起動に対応。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.2
+      <small>(2020-02-10)</small>
+    </h5>
+
+    <ul>
+<li>Touch Barに対応。</li>
+</ul>
+
+    
+    <h5 class="text-monospace">
+      v0.0.1
+      <small>(2020-02-07)</small>
+    </h5>
+
+    <ul>
+<li>画面上部に戻る/進む/更新ボタンを追加。</li>
+<li>メニューバーのアイコンを右クリックして正常終了する機能を追加。</li>
+</ul>
+
+    
+    
+  </div>
+
+  <div id="credits" class="">
+    <p>&nbsp;</p>
+    <h3>クレジット</h3>
+
+    <h5>開発者</h5>
+    <ul>
+<li>Joonyoung Yi [<a href="https://www.linkedin.com/in/joonyoungyi/">LinkedIn</a>] [<a href="https://github.com/JoonyoungYi">Github</a>]</li>
+<li>Kangmin Ahn [<a href="https://www.linkedin.com/in/kang-min-ahn-5615b9106/">LinkedIn</a>] [<a href="https://github.com/saltylight">Github</a>]</li>
+</ul>
+
+
+    <h5>サポート</h5>
+
+    <ul>
+      <li>このプログラムを気に入っていただけましたら、コーヒー一杯おごっていただけませんか？</li>
+    </ul>
+
+    <ul style="list-style: none;">
+      <li>
+        
+        <form style="display: inline;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onclick="gtag('event', 'paypal', {});">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="V749YMW7J58ML">
+          <input type="hidden" name="currency_code" value="USD">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+
+          <select name="os0">
+            <option value="Coffee * 1">Coffee * 1 $3.00 USD</option>
+            <option value="Coffee * 2">Coffee * 2 $6.00 USD</option>
+            <option value="Coffee * 3">Coffee * 3 $9.00 USD</option>
+          </select>
+
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        </form>
+
+        <a target="_blank" href="https://www.buymeacoffee.com/petitakm" onclick="gtag('event', 'buymeacoffee', {});">
+          <img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 170px !important;">
+        </a>
+        
+
+        <a target="_blank" href="/static/images/support/kakao-pay-qr.jpeg" onclick="gtag('event', 'kakaopay', {});">
+          <img src="/static/images/support/kakao-pay.jpg" style="height: 40px !important;width: 100px; margin-left: 8px; !important;">
+        </a>
+
+        <a target="_blank" href="/static/images/support/toss-qr.jpeg" onclick="gtag('event', 'toss', {});">
+          <img src="/static/images/support/toss.png" style="height: 40px !important;width: 118px; margin-left: 8px; !important;">
+        </a>
+      </li>
+    </ul>
+
+    <br />
+
+    <h5>スペシャルサンクス</h5>
+    <ul>
+<li>この製品は、高校生が開発した非公式の<a href="https://macnews.tistory.com/1487">Bugs Music Player</a>にインスパイアされました。（<a href="http://www.bloter.net/archives/162026">関連記事</a>）</li>
+</ul>
+
+  </div>
+
+  <div id="backers" class="">
+    <p>&nbsp;</p>
+    <h3>支援者</h3>
+
+    <ul>
+      
+      
+      <li><strong>정승용</strong></li>
+      
+      <li><strong>조용석</strong></li>
+      
+      <li><strong>김규진</strong></li>
+      
+      <li><strong>박정환</strong></li>
+      
+      <li><strong>진성주</strong></li>
+      
+      <li><strong>김지호</strong></li>
+      
+      <li><strong>xguru</strong></li>
+      
+      <li><strong>유희동</strong></li>
+      
+      <li><strong>이나경</strong></li>
+      
+      <li><strong>양정원</strong></li>
+      
+      <li><strong>조현종</strong></li>
+      
+      <li><strong>홍승호</strong></li>
+      
+      
+    </ul>
+  </div>
+
+  <div id="license" class="">
+    <p>&nbsp;</p>
+    <h3>ライセンス</h3>
+
+    <ul>
+<li>この製品は無料です。個人・商用問わず自由にご利用いただけます。</li>
+<li>Petit Youtube Music PlayerはYoutubeのサードパーティアプリケーションであり、Youtubeが運営するサイトではありません。</li>
+</ul>
+
+  </div>
+
+  <div id="feedback" class="">
+    <p>&nbsp;</p>
+    <h3>フィードバック</h3>
+
+    <ul>
+<li>機能のご提案やバグ報告はページ下部のコメント欄にお願いします。その他のお問い合わせはメールでどうぞ！ <a href="joonyoungyi.official@gmail.com">joonyoungyi.official@gmail.com</a></li>
+</ul>
+
+    <p>&nbsp;</p>
+  </div>
+
+
+  
+  <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "ja"; this.page.url = "https://getpetit.github.io/ja"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//getpetit.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+  
+</main>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script>
+  // 언어 선택 드롭다운 클릭 시 수동 선택 플래그 저장
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function(el) {
+      el.addEventListener('click', function() {
+        localStorage.setItem('petit_lang_set', '1');
+      });
+    });
+  });
+
+  // 자동 언어 감지 (수동 선택 시 스킵)
+  (async function() {
+    if (window.location.pathname !== '/') return;
+    if (localStorage.getItem('petit_lang_set')) return;
+
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var map = {
+      'ko': '/ko', 'ja': '/ja', 'zh-cn': '/zh-Hans', 'zh-hans': '/zh-Hans', 'zh': '/zh-Hans',
+      'es': '/es', 'de': '/de', 'pt-br': '/pt-BR', 'pt': '/pt-BR',
+      'fr': '/fr', 'tr': '/tr'
+    };
+    var redirect = map[lang] || map[lang.split('-')[0]];
+
+    // 브라우저 언어로 감지 못한 경우 IP 기반 시도
+    if (!redirect) {
+      try {
+        var res = await fetch('https://ipapi.co/json/');
+        var data = await res.json();
+        var countryMap = {
+          'KR': '/ko',
+          'JP': '/ja',
+          'CN': '/zh-Hans', 'TW': '/zh-Hans', 'HK': '/zh-Hans',
+          'ES': '/es', 'MX': '/es', 'AR': '/es', 'CO': '/es', 'PE': '/es', 'CL': '/es',
+          'DE': '/de', 'AT': '/de', 'CH': '/de',
+          'FR': '/fr', 'BE': '/fr',
+          'TR': '/tr',
+          'BR': '/pt-BR', 'PT': '/pt-BR'
+        };
+        redirect = countryMap[data.country_code] || null;
+      } catch(e) {}
+    }
+
+    if (redirect) window.location.replace(redirect);
+  })();
+  </script>
+
+</body>
+
+</html>
