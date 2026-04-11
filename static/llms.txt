@@ -1,0 +1,64 @@
+# Petit Player
+
+> Free macOS menubar app for YouTube Music. Control playback from the menu bar without switching windows.
+
+## What is Petit Player?
+
+Petit Player is a free, open-source macOS application that puts YouTube Music in your menu bar. It is built natively in Swift and AppKit, making it lightweight and fast. You can play, pause, skip tracks, control volume, and use keyboard shortcuts — all without opening a browser window.
+
+- **Current version:** v0.1.2 (released 2026-04-06)
+- **Minimum macOS:** 12 (Monterey)
+- **Price:** Free
+- **Download:** https://github.com/getpetit/petit-youtube-music-release/releases/latest
+- **Website:** https://getpetit.github.io
+
+## Key Features
+
+- **Menu bar player** — Access YouTube Music from the macOS menu bar at any time, in any app.
+- **Global keyboard shortcuts** — Default: Ctrl+Option+M (toggle window), Ctrl+Option+P (play/pause), Ctrl+Option+[ (previous), Ctrl+Option+] (next). All shortcuts are customizable.
+- **Media key support** — F7 (previous), F8 (play/pause), F9 (next) work system-wide via MPRemoteCommandCenter.
+- **Picture-in-Picture (PiP)** — Float a compact player window over any app with track artwork, artist name, and playback controls.
+- **Wide Mode** — Expand the player beyond its default width.
+- **Chrome login import** — Google blocks sign-in in embedded browsers. Petit Player works around this by importing your login session from Chrome via CDP.
+- **YouTube URL clipboard conversion** — Detects youtube.com links in your clipboard and converts them to music.youtube.com automatically.
+- **Launch at startup** — Supported on macOS 13+.
+- **9 languages** — English, Korean, Japanese, Simplified Chinese, Spanish, German, Portuguese (Brazil), French, Turkish.
+
+## Technical Details
+
+- **Built with:** Swift, AppKit, WebKit
+- **Architecture:** Universal binary (arm64 + x86_64)
+- **Google login method:** Chrome DevTools Protocol (CDP) via URLSessionWebSocketTask
+- **No Electron** — Rewritten from Electron to native Swift in v0.1.0 for better performance and lower memory usage.
+
+## Frequently Asked Questions
+
+**Is Petit Player free?**
+Yes. Petit Player is completely free for personal and commercial use.
+
+**Does it work on Apple Silicon (M1/M2/M3/M4)?**
+Yes. The binary is universal (arm64 + x86_64), so it runs natively on both Apple Silicon and Intel Macs.
+
+**Why can't I sign in with Google directly in the app?**
+Google blocks sign-in in embedded browsers (WKWebView) using TLS fingerprinting. Use "Import Login from Chrome" in the right-click menu to import your existing Chrome session.
+
+**What macOS versions are supported?**
+macOS 12 (Monterey) and later. Launch at Startup requires macOS 13 (Ventura) or later.
+
+**Is this affiliated with YouTube or Google?**
+No. Petit Player is an independent third-party application. It is not operated by or affiliated with YouTube or Google.
+
+**Where can I report bugs or request features?**
+Email: joonyoungyi.official@gmail.com
+
+## Version History (Recent)
+
+- **v0.1.2** (2026-04-06): Fixed settings menu appearing behind app window.
+- **v0.1.1**: Shortcut settings window added.
+- **v0.1.0** (2026-04-04): Complete rewrite from Electron to native Swift/AppKit. Media keys, Wide Mode, improved PiP, 9-language support.
+
+## Links
+
+- Website: https://getpetit.github.io
+- GitHub (releases): https://github.com/getpetit/petit-youtube-music-release
+- GitHub (source): https://github.com/JoonyoungYi/petit-menubar
