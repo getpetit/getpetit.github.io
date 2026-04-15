@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="ko">
 
 <head>
   <!-- Google Analytics 4 -->
@@ -12,7 +12,8 @@
   </script>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
 
   <title>Petit 플레이어</title>
   <meta name="description" content="Petit Player — macOS 메뉴바에서 바로 쓰는 무료 YouTube Music 플레이어. 전역 단축키, PiP, 미디어 키 지원.">
@@ -26,9 +27,8 @@
   <meta name="twitter:description" content="Petit Player — macOS 메뉴바에서 바로 쓰는 무료 YouTube Music 플레이어. 전역 단축키, PiP, 미디어 키 지원.">
   <meta name="twitter:image" content="https://getpetit.github.io/static/apple-touch-icon.png">
   <link rel="canonical" href="https://getpetit.github.io/ko/">
-  <link rel="me" href="https://getpetit.github.io/llms.txt">
+  <link rel="me" href="/llms.txt">
 
-  <!-- JSON-LD: SoftwareApplication structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,7 +36,7 @@
     "name": "Petit Player",
     "description": "Free macOS menubar app for YouTube Music. Control playback, use global shortcuts, PiP, and media keys without switching windows.",
     "url": "https://getpetit.github.io",
-    "downloadUrl": "https://github.com/getpetit/petit-youtube-music-release/releases/latest",
+    "downloadUrl": "https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "macOS 12+",
     "softwareVersion": "0.1.2",
@@ -70,8 +70,17 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script>
+  (function() {
+    if (window.location.pathname !== '/') return;
+    if (localStorage.getItem('petit_lang_set')) return;
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var map = {'ko':'/ko','ja':'/ja','zh-cn':'/zh-Hans','zh-hans':'/zh-Hans','zh':'/zh-Hans','es':'/es','de':'/de','pt-br':'/pt-BR','pt':'/pt-BR','fr':'/fr','tr':'/tr'};
+    var redirect = map[lang] || map[lang.split('-')[0]];
+    if (redirect) { window.location.replace(redirect); }
+  })();
+  </script>
+
   <link rel="stylesheet" href="/static/style.css">
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
@@ -82,144 +91,192 @@
 
 <body>
   
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <strong class="navbar-brand">Petit 플레이어</strong>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item ">
-          <a class="nav-link" href="#features">기능</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#release-notes">릴리즈 노트</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#credits">크레딧</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#license">라이센스</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#feedback">피드백</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <div class="dropdown show">
-          <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            언어 선택
-          </a>
+  <header class="site-header">
+    <div class="site-shell site-header__inner">
+      <a class="brand" href="/">Petit 플레이어</a>
 
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/">English</a>
-            <a class="dropdown-item" href="/ko">한국어</a>
-            <a class="dropdown-item" href="/ja">日本語</a>
-            <a class="dropdown-item" href="/zh-Hans">简体中文</a>
-            <a class="dropdown-item" href="/es">Español</a>
-            <a class="dropdown-item" href="/de">Deutsch</a>
-            <a class="dropdown-item" href="/pt-BR">Português</a>
-            <a class="dropdown-item" href="/fr">Français</a>
-            <a class="dropdown-item" href="/tr">Türkçe</a>
+      <nav class="site-nav site-nav--desktop" aria-label="Primary">
+        <a href="/ko/#features">기능</a>
+        <a href="/ko/#release-notes">릴리즈 노트</a>
+        <a href="/ko/#credits">크레딧</a>
+        <a href="/ko/#feedback">피드백</a>
+      </nav>
+
+      <div class="header-actions">
+        <details class="site-nav site-nav--mobile">
+          <summary class="nav-toggle">&#9776;</summary>
+          <div class="nav-panel">
+            <a href="/ko/#features">기능</a>
+            <a href="/ko/#release-notes">릴리즈 노트</a>
+            <a href="/ko/#credits">크레딧</a>
+            <a href="/ko/#feedback">피드백</a>
+            <div class="nav-panel__divider"></div>
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简体中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
           </div>
-        </div>
-      </form>
+        </details>
+
+        <details class="language-switcher language-switcher--desktop-only">
+          <summary>언어 선택</summary>
+          <div class="language-switcher__menu">
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简체中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
+          </div>
+        </details>
+      </div>
     </div>
-  </div>
-</nav>
+  </header>
 
+  
+<main id="main" class="page">
+  <section class="section section--dark">
+    <div class="section__inner hero__inner">
+      <h1 class="hero__title">OS X 메뉴 바에서 쓰는<br>YouTube Music 플레이어.</h1>
+      <p class="hero__lede">메뉴 바에서 더 빠르고 간편하게, YouTube Music에 접근하세요.</p>
 
-<div class="main-description">
+      <div class="hero__actions">
+        <a class="button button--primary"
+           href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg"
+           onclick="gtag('event', 'download-dmg', {'version': 'v0.1.2'});">
+          최신 버전 다운로드
+        </a>
+      </div>
 
-  <div class="container">
-    <h1>OS X 메뉴 바에서 쓰는 Youtube Music 플레이어.</h1>
-    <p class="lead">
-      메뉴 바에서 더 빠르고 간편하게, Youtube Music에 접근하세요.
-    </p>
+      <div class="hero__stats" aria-label="Highlights">
+        <span>macOS 12+</span>
+        <span>9 languages</span>
+        <span>Free download</span>
+      </div>
 
-    <a class="btn btn-primary btn-lg" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg"
-      onclick="gtag('event', 'download-dmg', {'version': 'v0.1.2'});">최신 버전 다운로드</a>
-  </div>
-</div>
+      <p class="hero__disclaimer">Petit is an unofficial third-party app. Not affiliated with or endorsed by YouTube or Google.</p>
 
-<main class="container">
-  <div id="features" class="">
-    <p>&nbsp;</p>
-    <h3>기능</h3>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>언제 어디서 어떤 작업을 하고 있든 메뉴 바에서 플레이어에 바로 접근할 수 있습니다.</p>
-  </div>
-  
-  <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-6">
-    <img src="/static/images/feature/menubar-fast.png" class="img-fluid rounded" alt="">
-    <br /> &nbsp;
-  </div>
-  
-  
-  <div class="col-12">
-    <p>PIP(Picture in Picture) 기능 지원을 통해, 어떤 작업을 하든 Youtube Music을 자연스럽게 즐길 수 있습니다.</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>플레이어를 굳이 열지 않고도 메뉴 바에서 바로 재생 상태를 변경할 수 있습니다.</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>OS X 네이티브 미디어 키를 지원합니다. 또, 단축키로도 플레이어를 켜고 끌 수 있고, 음악 재생 상태도 변경할 수 있습니다.</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>현재는 Youtube Music만 지원합니다.</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>9개 언어 지원: 영어, 한국어, 일본어, 중국어(간체), 스페인어, 독일어, 포르투갈어, 프랑스어, 터키어.</p>
-  </div>
-  
-  
-  
+      <div class="hero__visual">
+        <figure class="app-screenshot">
+          <img
+            src="/static/images/feature/menubar-fast.png"
+            srcset="/static/images/feature/menubar-fast.png 1x, /static/images/feature/menubar-fast@2x.png 2x"
+            alt="Petit Player app screenshot">
+        </figure>
+      </div>
+    </div>
+  </section>
 
-  <div id="release-notes" class="">
-    <p>&nbsp;</p>
-    <h3>릴리즈 노트</h3>
+  
+  <section id="features" class="section section--light">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">핵심 기능을 한 곳에.</h2>
+      </div>
 
-    
-    
-    <h5 class="text-monospace">
-      v0.1.2
-      <small>(2026-04-06)</small>
-    </h5>
+      <ul class="feature-list">
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Menubar Fast</h3>
+          <p class="feature-item__copy">언제 어디서 어떤 작업을 하고 있든 메뉴 바에서 플레이어에 바로 접근할 수 있습니다.</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Menubar Media</h3>
+          <p class="feature-item__copy">PIP(Picture in Picture) 기능 지원을 통해, 어떤 작업을 하든 YouTube Music을 자연스럽게 즐길 수 있습니다.</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Menubar Media</h3>
+          <p class="feature-item__copy">플레이어를 굳이 열지 않고도 메뉴 바에서 바로 재생 상태를 변경할 수 있습니다.</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Shortcut</h3>
+          <p class="feature-item__copy">OS X 네이티브 미디어 키를 지원합니다. 또, 단축키로도 플레이어를 켜고 끌 수 있고, 음악 재생 상태도 변경할 수 있습니다.</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Supported Sites</h3>
+          <p class="feature-item__copy">현재는 YouTube Music만 지원합니다.</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Languages</h3>
+          <p class="feature-item__copy">9개 언어 지원: 영어, 한국어, 일본어, 중국어(간체), 스페인어, 독일어, 포르투갈어, 프랑스어, 터키어.</p>
+        </li>
+        
+      </ul>
+    </div>
+  </section>
 
-    <ul>
+  
+  <section id="release-notes" class="section section--alt">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">릴리즈 노트</h2>
+      </div>
+
+      <div class="release-list">
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.1.2</span>
+            <span class="release-item__date">2026-04-06</span>
+            
+            <a class="release-item__download" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg">↓ dmg</a>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>설정 아이콘 클릭 시 메뉴가 앱 창 뒤에 표시되던 문제를 수정했습니다.</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.1.1
-      <small>(2026-04-05)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.1.1</span>
+            <span class="release-item__date">2026-04-05</span>
+            
+            <a class="release-item__download" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.1/Petit-Player-0.1.1.dmg">↓ dmg</a>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>키보드 단축키를 직접 변경할 수 있습니다. 설정 → 키보드 단축키 → Customize Shortcuts...</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.1.0
-      <small>(2026-04-04)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.1.0</span>
+            <span class="release-item__date">2026-04-04</span>
+            
+            <a class="release-item__download" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.0/Petit-Player-0.1.0.dmg">↓ dmg</a>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>Electron에서 네이티브 Swift/AppKit으로 완전히 재작성. 더 가볍고 빠름.</li>
 <li>PiP 개선. 더 큰 컨트롤 버튼, 고화질 아트워크, 아티스트 이름 표시.</li>
 <li>미디어 키 (재생/일시정지, 다음곡, 이전곡) 지원.</li>
@@ -228,106 +285,141 @@
 <li>키보드 단축키를 <code>Ctrl+Option</code> 조합으로 변경 (다른 앱과 충돌 방지).</li>
 <li>내장 브라우저에서 Google 로그인이 안 되는 상황을 위해, 우클릭 메뉴에 "Chrome에서 로그인 가져오기" 추가.</li>
 <li>9개 언어 지원: 영어, 한국어, 일본어, 중국어(간체), 스페인어, 독일어, 포르투갈어, 프랑스어, 터키어.</li>
-<li>광고 차단 (AdBlock) 제거.</li>
 <li>곡 변경 알림 제거.</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.12
-      <small>(2020-05-17)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.12</span>
+            <span class="release-item__date">2020-05-17</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>애드블록 무한로딩 이슈 해결.</li>
 <li>맥북 잠금해제 및 인터넷 재 연결시 음악이 재생되던 이슈 해결.</li>
 <li>애드블록 로딩시간 개선.</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.11
-      <small>(2020-04-23)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.11</span>
+            <span class="release-item__date">2020-04-23</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>pip 윈도우 크기 조절 지원</li>
 <li>마우스 오버시에만 pip 컨트롤 버튼 노출</li>
 <li>앱 아이콘 변경</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.10
-      <small>(2020-03-31)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.10</span>
+            <span class="release-item__date">2020-03-31</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>지금 재생 중 기능 내 재생 시간 변경 기능 지원 종료</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.9
-      <small>(2020-03-30)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.9</span>
+            <span class="release-item__date">2020-03-30</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>재시작 재지원</li>
 <li>마이너 버그 픽스</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.8
-      <small>(2020-03-29)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.8</span>
+            <span class="release-item__date">2020-03-29</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>자동 업데이트 버그 수정</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.7
-      <small>(2020-03-28)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.7</span>
+            <span class="release-item__date">2020-03-28</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>자동 업데이트 추가</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.6
-      <small>(2020-03-27)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.6</span>
+            <span class="release-item__date">2020-03-27</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>지금 재생 중 기능 내 재생 시간 변경 기능 지원</li>
 <li>음악 변경될 때 알림 지원</li>
 <li>반복 상태 변경 기능 지원</li>
 <li>드래그로 재생 상태 변경 이후 플레이어가 제대로 동작하지 않는 버그 수정</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.5
-      <small>(2020-03-20)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.5</span>
+            <span class="release-item__date">2020-03-20</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>오프라인 모드 지원</li>
 <li>버그 수정</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.4
-      <small>(2020-03-15)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.4</span>
+            <span class="release-item__date">2020-03-15</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>애드 블록 지원</li>
 <li>PIP(Picture in Picture) 지원</li>
 <li>키보드 단축키 지원(앱 열기/닫기, 재생/정지, 이전 곡 재생, 다음 곡 재생)</li>
@@ -336,141 +428,149 @@
 <li>버그 수정 및 UI 개선</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.3
-      <small>(2020-02-13)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.3</span>
+            <span class="release-item__date">2020-02-13</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>로그인 시 자동 실행 기능 추가</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.2
-      <small>(2020-02-10)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.2</span>
+            <span class="release-item__date">2020-02-10</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>터치바 지원</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.1
-      <small>(2020-02-07)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.1</span>
+            <span class="release-item__date">2020-02-07</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>화면 상단 뒤로가기/앞으로가기/새로고침 버튼 추가.</li>
 <li>메뉴바 내 아이콘 오른쪽 버튼 클릭을 통한 정상 종료 기능 추가.</li>
 </ul>
 
-    
-    
-  </div>
-
-  <div id="credits" class="">
-    <p>&nbsp;</p>
-    <h3>크레딧</h3>
-
-    <h5>만든 사람들</h5>
-    <ul>
-<li>이준영 [<a href="https://www.linkedin.com/in/joonyoungyi/">LinkedIn</a>] [<a href="https://github.com/JoonyoungYi">Github</a>]</li>
-<li>안강민 [<a href="https://www.linkedin.com/in/kang-min-ahn-5615b9106/">LinkedIn</a>] [<a href="https://github.com/saltylight">Github</a>]</li>
-</ul>
-
-
-    <h5>개발자 지원하기</h5>
-
-    <ul>
-      <li>만약 이 프로그램이 유용하셨다면, 저희에게 커피 한 잔 사주시겠어요? 카페인을 코드로 치환하겠습니다 :)</li>
-    </ul>
-
-    <ul style="list-style: none;">
-      <li>
+          </div>
+        </div>
         
-
-        <a target="_blank" href="/static/images/support/kakao-pay-qr.jpeg" onclick="gtag('event', 'kakaopay', {});">
-          <img src="/static/images/support/kakao-pay.jpg" style="height: 40px !important;width: 100px; margin-left: 8px; !important;">
-        </a>
-
-        <a target="_blank" href="/static/images/support/toss-qr.jpeg" onclick="gtag('event', 'toss', {});">
-          <img src="/static/images/support/toss.png" style="height: 40px !important;width: 118px; margin-left: 8px; !important;">
-        </a>
-      </li>
-    </ul>
-
-    <br />
-
-    <h5>Special Thanks To</h5>
-    <ul>
-<li>본 제품은 고등학생이 만든 비공식 <a href="https://macnews.tistory.com/1487">맥용 벅스 플레이어</a>에 영감을 받아 제작되었습니다. (<a href="http://www.bloter.net/archives/162026">관련기사</a>)</li>
-</ul>
-
-  </div>
-
-  <div id="backers" class="">
-    <p>&nbsp;</p>
-    <h3>Backers</h3>
-
-    <ul>
-      
-      
-      <li><strong>정승용</strong> 님</li>
-      
-      <li><strong>조용석</strong> 님</li>
-      
-      <li><strong>김규진</strong> 님</li>
-      
-      <li><strong>박정환</strong> 님</li>
-      
-      <li><strong>진성주</strong> 님</li>
-      
-      <li><strong>김지호</strong> 님</li>
-      
-      <li><strong>xguru</strong> 님</li>
-      
-      <li><strong>유희동</strong> 님</li>
-      
-      <li><strong>이나경</strong> 님</li>
-      
-      <li><strong>양정원</strong> 님</li>
-      
-      <li><strong>조현종</strong> 님</li>
-      
-      <li><strong>홍승호</strong> 님</li>
-      
-      
-    </ul>
-  </div>
-
-  <div id="license" class="">
-    <p>&nbsp;</p>
-    <h3>라이센스</h3>
-
-    <ul>
-<li>본 제품은 무료입니다. 기업용 개인용 관계없이 자유롭게 사용하실 수 있습니다.</li>
-<li>Petit Youtube Music Player는 Youtube의 Third-Party 애플리케이션으로, Youtube에서 운영하는 사이트가 아닙니다.</li>
-</ul>
-
-  </div>
-
-  <div id="feedback" class="">
-    <p>&nbsp;</p>
-    <h3>피드백</h3>
-
-    <ul>
-<li>기능 제안 및 버그 리포트는 하단에 댓글로 달아주세요. 그 외 문의는 이메일 주세요! <a href="../ko/joonyoungyi.official@gmail.com">joonyoungyi.official@gmail.com</a></li>
-</ul>
-
-    <p>&nbsp;</p>
-  </div>
-
+      </div>
+    </div>
+  </section>
 
   
-  <div class="comments">
+  <section id="credits" class="section section--light">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">Credits</h2>
+      </div>
+
+      <div class="credits-body">
+        <div class="credits-block">
+          <h3 class="credits-block__title">만든 사람들</h3>
+          <div class="credits-block__body">
+            <p>이준영 [<a href="https://www.linkedin.com/in/joonyoungyi/">LinkedIn</a>] [<a href="https://github.com/JoonyoungYi">Github</a>]<br>
+안강민 [<a href="https://www.linkedin.com/in/kang-min-ahn-5615b9106/">LinkedIn</a>] [<a href="https://github.com/saltylight">Github</a>]</p>
+
+          </div>
+        </div>
+
+        <div class="credits-block">
+          <h3 class="credits-block__title">개발자 지원하기</h3>
+          <p class="credits-block__lede">만약 이 프로그램이 유용하셨다면, 저희에게 커피 한 잔 사주시겠어요? 카페인을 코드로 치환하겠습니다 :)</p>
+          <div class="support-grid">
+            
+            <a class="support-pill" target="_blank" href="/static/images/support/kakao-pay-qr.jpeg" onclick="gtag('event', 'kakaopay', {});">KakaoPay QR</a>
+            <a class="support-pill" target="_blank" href="/static/images/support/toss-qr.jpeg" onclick="gtag('event', 'toss', {});">Toss QR</a>
+          </div>
+        </div>
+
+        <div class="credits-block">
+          <h3 class="credits-block__title">Special Thanks To</h3>
+          <div class="credits-block__body">
+            <p>본 제품은 고등학생이 만든 비공식 <a href="https://macnews.tistory.com/1487">맥용 벅스 플레이어</a>에 영감을 받아 제작되었습니다. (<a href="http://www.bloter.net/archives/162026">관련기사</a>)</p>
+
+          </div>
+        </div>
+
+        
+        <div class="credits-block">
+          <h3 class="credits-block__title">후원자</h3>
+          <div class="backer-grid">
+            
+            <span class="backer-pill"><strong>정승용</strong> 님</span>
+            
+            <span class="backer-pill"><strong>조용석</strong> 님</span>
+            
+            <span class="backer-pill"><strong>김규진</strong> 님</span>
+            
+            <span class="backer-pill"><strong>박정환</strong> 님</span>
+            
+            <span class="backer-pill"><strong>진성주</strong> 님</span>
+            
+            <span class="backer-pill"><strong>김지호</strong> 님</span>
+            
+            <span class="backer-pill"><strong>xguru</strong> 님</span>
+            
+            <span class="backer-pill"><strong>유희동</strong> 님</span>
+            
+            <span class="backer-pill"><strong>이나경</strong> 님</span>
+            
+            <span class="backer-pill"><strong>양정원</strong> 님</span>
+            
+            <span class="backer-pill"><strong>조현종</strong> 님</span>
+            
+            <span class="backer-pill"><strong>홍승호</strong> 님</span>
+            
+          </div>
+        </div>
+        
+
+        <div class="credits-block">
+          <h3 class="credits-block__title">라이센스</h3>
+          <div class="credits-block__body">
+            <p>본 제품은 무료입니다. 기업용 개인용 관계없이 자유롭게 사용하실 수 있습니다.</p>
+<p>Petit YouTube Music Player는 Youtube의 Third-Party 애플리케이션으로, Youtube에서 운영하는 사이트가 아닙니다.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback" class="section section--alt">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">피드백</h2>
+      </div>
+
+      <article class="feedback-card">
+        <div class="feedback-card__body">
+          <p>기능 제안 및 버그 리포트는 하단에 댓글로 달아주세요. 그 외 문의는 이메일 주세요! <a href="../ko/joonyoungyi.official@gmail.com">joonyoungyi.official@gmail.com</a></p>
+
+        </div>
+        
+        <div class="feedback-card__comments comments">
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function() { this.page.identifier = "/"; this.page.url = "https://getpetit.github.io/"; };
@@ -486,61 +586,22 @@
     rel="nofollow">comments powered by Disqus.</a>
 </noscript>
 </div>
-  
+        
+      </article>
+    </div>
+  </section>
 </main>
 
 
-
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
   <script>
-  // 언어 선택 드롭다운 클릭 시 수동 선택 플래그 저장
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function(el) {
+    document.querySelectorAll('.js-language-choice').forEach(function(el) {
       el.addEventListener('click', function() {
         localStorage.setItem('petit_lang_set', '1');
       });
     });
   });
-
-  // 자동 언어 감지 (수동 선택 시 스킵)
-  (async function() {
-    if (window.location.pathname !== '/') return;
-    if (localStorage.getItem('petit_lang_set')) return;
-
-    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    var map = {
-      'ko': '/ko', 'ja': '/ja', 'zh-cn': '/zh-Hans', 'zh-hans': '/zh-Hans', 'zh': '/zh-Hans',
-      'es': '/es', 'de': '/de', 'pt-br': '/pt-BR', 'pt': '/pt-BR',
-      'fr': '/fr', 'tr': '/tr'
-    };
-    var redirect = map[lang] || map[lang.split('-')[0]];
-
-    // 브라우저 언어로 감지 못한 경우 IP 기반 시도
-    if (!redirect) {
-      try {
-        var res = await fetch('https://ipapi.co/json/');
-        var data = await res.json();
-        var countryMap = {
-          'KR': '/ko',
-          'JP': '/ja',
-          'CN': '/zh-Hans', 'TW': '/zh-Hans', 'HK': '/zh-Hans',
-          'ES': '/es', 'MX': '/es', 'AR': '/es', 'CO': '/es', 'PE': '/es', 'CL': '/es',
-          'DE': '/de', 'AT': '/de', 'CH': '/de',
-          'FR': '/fr', 'BE': '/fr',
-          'TR': '/tr',
-          'BR': '/pt-BR', 'PT': '/pt-BR'
-        };
-        redirect = countryMap[data.country_code] || null;
-      } catch(e) {}
-    }
-
-    if (redirect) window.location.replace(redirect);
-  })();
   </script>
-
 </body>
 
 </html>

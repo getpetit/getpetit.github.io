@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Google Analytics 4 -->
@@ -12,7 +12,8 @@
   </script>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
 
   <title> — Petit Player</title>
   
@@ -26,9 +27,8 @@
   <meta name="twitter:description" content="Free macOS menubar app for YouTube Music.">
   <meta name="twitter:image" content="https://getpetit.github.io/static/apple-touch-icon.png">
   <link rel="canonical" href="https://getpetit.github.io/backers/12/">
-  <link rel="me" href="https://getpetit.github.io/llms.txt">
+  <link rel="me" href="/llms.txt">
 
-  <!-- JSON-LD: SoftwareApplication structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,7 +36,7 @@
     "name": "Petit Player",
     "description": "Free macOS menubar app for YouTube Music. Control playback, use global shortcuts, PiP, and media keys without switching windows.",
     "url": "https://getpetit.github.io",
-    "downloadUrl": "https://github.com/getpetit/petit-youtube-music-release/releases/latest",
+    "downloadUrl": "https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "macOS 12+",
     "softwareVersion": "0.1.2",
@@ -70,8 +70,17 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script>
+  (function() {
+    if (window.location.pathname !== '/') return;
+    if (localStorage.getItem('petit_lang_set')) return;
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var map = {'ko':'/ko','ja':'/ja','zh-cn':'/zh-Hans','zh-hans':'/zh-Hans','zh':'/zh-Hans','es':'/es','de':'/de','pt-br':'/pt-BR','pt':'/pt-BR','fr':'/fr','tr':'/tr'};
+    var redirect = map[lang] || map[lang.split('-')[0]];
+    if (redirect) { window.location.replace(redirect); }
+  })();
+  </script>
+
   <link rel="stylesheet" href="/static/style.css">
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
@@ -82,61 +91,73 @@
 
 <body>
   
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-shell site-header__inner">
+      <a class="brand" href="/">Petit Player</a>
+
+      <nav class="site-nav site-nav--desktop" aria-label="Primary">
+        <a href="/#features">Feature</a>
+        <a href="/#release-notes">Release Notes</a>
+        <a href="/#credits">Credits</a>
+        <a href="/#feedback">Feedback</a>
+      </nav>
+
+      <div class="header-actions">
+        <details class="site-nav site-nav--mobile">
+          <summary class="nav-toggle">&#9776;</summary>
+          <div class="nav-panel">
+            <a href="/#features">Feature</a>
+            <a href="/#release-notes">Release Notes</a>
+            <a href="/#credits">Credits</a>
+            <a href="/#feedback">Feedback</a>
+            <div class="nav-panel__divider"></div>
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简体中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
+          </div>
+        </details>
+
+        <details class="language-switcher language-switcher--desktop-only">
+          <summary>Language</summary>
+          <div class="language-switcher__menu">
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简체中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  
 <div class="container" style="max-width:720px;margin:60px auto;padding:0 20px;">
   <h2></h2>
 </div>
 
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
   <script>
-  // 언어 선택 드롭다운 클릭 시 수동 선택 플래그 저장
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function(el) {
+    document.querySelectorAll('.js-language-choice').forEach(function(el) {
       el.addEventListener('click', function() {
         localStorage.setItem('petit_lang_set', '1');
       });
     });
   });
-
-  // 자동 언어 감지 (수동 선택 시 스킵)
-  (async function() {
-    if (window.location.pathname !== '/') return;
-    if (localStorage.getItem('petit_lang_set')) return;
-
-    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    var map = {
-      'ko': '/ko', 'ja': '/ja', 'zh-cn': '/zh-Hans', 'zh-hans': '/zh-Hans', 'zh': '/zh-Hans',
-      'es': '/es', 'de': '/de', 'pt-br': '/pt-BR', 'pt': '/pt-BR',
-      'fr': '/fr', 'tr': '/tr'
-    };
-    var redirect = map[lang] || map[lang.split('-')[0]];
-
-    // 브라우저 언어로 감지 못한 경우 IP 기반 시도
-    if (!redirect) {
-      try {
-        var res = await fetch('https://ipapi.co/json/');
-        var data = await res.json();
-        var countryMap = {
-          'KR': '/ko',
-          'JP': '/ja',
-          'CN': '/zh-Hans', 'TW': '/zh-Hans', 'HK': '/zh-Hans',
-          'ES': '/es', 'MX': '/es', 'AR': '/es', 'CO': '/es', 'PE': '/es', 'CL': '/es',
-          'DE': '/de', 'AT': '/de', 'CH': '/de',
-          'FR': '/fr', 'BE': '/fr',
-          'TR': '/tr',
-          'BR': '/pt-BR', 'PT': '/pt-BR'
-        };
-        redirect = countryMap[data.country_code] || null;
-      } catch(e) {}
-    }
-
-    if (redirect) window.location.replace(redirect);
-  })();
   </script>
-
 </body>
 
 </html>

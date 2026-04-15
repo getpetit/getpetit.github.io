@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="zh-Hans">
 
 <head>
   <!-- Google Analytics 4 -->
@@ -12,7 +12,8 @@
   </script>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
 
   <title>Petit Player</title>
   <meta name="description" content="Petit Player — 免费的macOS菜单栏YouTube Music播放器。支持全局快捷键、画中画、媒体键。">
@@ -26,9 +27,8 @@
   <meta name="twitter:description" content="Petit Player — 免费的macOS菜单栏YouTube Music播放器。支持全局快捷键、画中画、媒体键。">
   <meta name="twitter:image" content="https://getpetit.github.io/static/apple-touch-icon.png">
   <link rel="canonical" href="https://getpetit.github.io/zh-Hans/">
-  <link rel="me" href="https://getpetit.github.io/llms.txt">
+  <link rel="me" href="/llms.txt">
 
-  <!-- JSON-LD: SoftwareApplication structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,7 +36,7 @@
     "name": "Petit Player",
     "description": "Free macOS menubar app for YouTube Music. Control playback, use global shortcuts, PiP, and media keys without switching windows.",
     "url": "https://getpetit.github.io",
-    "downloadUrl": "https://github.com/getpetit/petit-youtube-music-release/releases/latest",
+    "downloadUrl": "https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "macOS 12+",
     "softwareVersion": "0.1.2",
@@ -70,8 +70,17 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script>
+  (function() {
+    if (window.location.pathname !== '/') return;
+    if (localStorage.getItem('petit_lang_set')) return;
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var map = {'ko':'/ko','ja':'/ja','zh-cn':'/zh-Hans','zh-hans':'/zh-Hans','zh':'/zh-Hans','es':'/es','de':'/de','pt-br':'/pt-BR','pt':'/pt-BR','fr':'/fr','tr':'/tr'};
+    var redirect = map[lang] || map[lang.split('-')[0]];
+    if (redirect) { window.location.replace(redirect); }
+  })();
+  </script>
+
   <link rel="stylesheet" href="/static/style.css">
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
@@ -82,144 +91,192 @@
 
 <body>
   
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <strong class="navbar-brand">Petit Player</strong>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item ">
-          <a class="nav-link" href="#features">功能</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#release-notes">发行说明</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#credits">致谢</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#license">许可协议</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#feedback">反馈</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <div class="dropdown show">
-          <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            语言
-          </a>
+  <header class="site-header">
+    <div class="site-shell site-header__inner">
+      <a class="brand" href="/">Petit Player</a>
 
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/">English</a>
-            <a class="dropdown-item" href="/ko">한국어</a>
-            <a class="dropdown-item" href="/ja">日本語</a>
-            <a class="dropdown-item" href="/zh-Hans">简体中文</a>
-            <a class="dropdown-item" href="/es">Español</a>
-            <a class="dropdown-item" href="/de">Deutsch</a>
-            <a class="dropdown-item" href="/pt-BR">Português</a>
-            <a class="dropdown-item" href="/fr">Français</a>
-            <a class="dropdown-item" href="/tr">Türkçe</a>
+      <nav class="site-nav site-nav--desktop" aria-label="Primary">
+        <a href="/zh-Hans/#features">功能</a>
+        <a href="/zh-Hans/#release-notes">发行说明</a>
+        <a href="/zh-Hans/#credits">致谢</a>
+        <a href="/zh-Hans/#feedback">反馈</a>
+      </nav>
+
+      <div class="header-actions">
+        <details class="site-nav site-nav--mobile">
+          <summary class="nav-toggle">&#9776;</summary>
+          <div class="nav-panel">
+            <a href="/zh-Hans/#features">功能</a>
+            <a href="/zh-Hans/#release-notes">发行说明</a>
+            <a href="/zh-Hans/#credits">致谢</a>
+            <a href="/zh-Hans/#feedback">反馈</a>
+            <div class="nav-panel__divider"></div>
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简体中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
           </div>
-        </div>
-      </form>
+        </details>
+
+        <details class="language-switcher language-switcher--desktop-only">
+          <summary>语言</summary>
+          <div class="language-switcher__menu">
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简체中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
+          </div>
+        </details>
+      </div>
     </div>
-  </div>
-</nav>
+  </header>
 
+  
+<main id="main" class="page">
+  <section class="section section--dark">
+    <div class="section__inner hero__inner">
+      <h1 class="hero__title">OS X菜单栏中的<br>YouTube Music播放器。</h1>
+      <p class="hero__lede">从菜单栏更快、更便捷地访问YouTube Music。</p>
 
-<div class="main-description">
+      <div class="hero__actions">
+        <a class="button button--primary"
+           href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg"
+           onclick="gtag('event', 'download-dmg', {'version': 'v0.1.2'});">
+          下载最新版本
+        </a>
+      </div>
 
-  <div class="container">
-    <h1>OS X菜单栏中的Youtube Music播放器。</h1>
-    <p class="lead">
-      从菜单栏更快、更便捷地访问Youtube Music。
-    </p>
+      <div class="hero__stats" aria-label="Highlights">
+        <span>macOS 12+</span>
+        <span>9 languages</span>
+        <span>Free download</span>
+      </div>
 
-    <a class="btn btn-primary btn-lg" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg"
-      onclick="gtag('event', 'download-dmg', {'version': 'v0.1.2'});">下载最新版本</a>
-  </div>
-</div>
+      <p class="hero__disclaimer">Petit is an unofficial third-party app. Not affiliated with or endorsed by YouTube or Google.</p>
 
-<main class="container">
-  <div id="features" class="">
-    <p>&nbsp;</p>
-    <h3>功能</h3>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>无论何时何地，无论您在做什么，都可以从菜单栏直接访问播放器。</p>
-  </div>
-  
-  <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-6">
-    <img src="/static/images/feature/menubar-fast.png" class="img-fluid rounded" alt="">
-    <br /> &nbsp;
-  </div>
-  
-  
-  <div class="col-12">
-    <p>通过PIP（画中画）功能，无论做什么都能畅享Youtube Music。</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>无需打开播放器，直接在菜单栏中更改播放状态。</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>支持OS X原生媒体键。通过快捷键随时随地切换播放器开关和播放状态。</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>目前仅支持Youtube Music。</p>
-  </div>
-  
-  
-  <div class="col-12">
-    <p>支持9种语言：英语、韩语、日语、简体中文、西班牙语、德语、葡萄牙语、法语和土耳其语。</p>
-  </div>
-  
-  
-  
+      <div class="hero__visual">
+        <figure class="app-screenshot">
+          <img
+            src="/static/images/feature/menubar-fast.png"
+            srcset="/static/images/feature/menubar-fast.png 1x, /static/images/feature/menubar-fast@2x.png 2x"
+            alt="Petit Player app screenshot">
+        </figure>
+      </div>
+    </div>
+  </section>
 
-  <div id="release-notes" class="">
-    <p>&nbsp;</p>
-    <h3>发行说明</h3>
+  
+  <section id="features" class="section section--light">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">一切都在指尖。</h2>
+      </div>
 
-    
-    
-    <h5 class="text-monospace">
-      v0.1.2
-      <small>(2026-04-06)</small>
-    </h5>
+      <ul class="feature-list">
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Menubar Fast</h3>
+          <p class="feature-item__copy">无论何时何地，无论您在做什么，都可以从菜单栏直接访问播放器。</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Menubar Media</h3>
+          <p class="feature-item__copy">通过PIP（画中画）功能，无论做什么都能畅享YouTube Music。</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Menubar Media</h3>
+          <p class="feature-item__copy">无需打开播放器，直接在菜单栏中更改播放状态。</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Shortcut</h3>
+          <p class="feature-item__copy">支持OS X原生媒体键。通过快捷键随时随地切换播放器开关和播放状态。</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Supported Sites</h3>
+          <p class="feature-item__copy">目前仅支持YouTube Music。</p>
+        </li>
+        
+        
+        <li class="feature-item">
+          <h3 class="feature-item__title">Languages</h3>
+          <p class="feature-item__copy">支持9种语言：英语、韩语、日语、简体中文、西班牙语、德语、葡萄牙语、法语和土耳其语。</p>
+        </li>
+        
+      </ul>
+    </div>
+  </section>
 
-    <ul>
+  
+  <section id="release-notes" class="section section--alt">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">更新日志</h2>
+      </div>
+
+      <div class="release-list">
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.1.2</span>
+            <span class="release-item__date">2026-04-06</span>
+            
+            <a class="release-item__download" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.2/Petit-Player-0.1.2.dmg">↓ dmg</a>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>修复了点击齿轮图标时设置菜单出现在应用窗口后面的问题。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.1.1
-      <small>(2026-04-05)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.1.1</span>
+            <span class="release-item__date">2026-04-05</span>
+            
+            <a class="release-item__download" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.1/Petit-Player-0.1.1.dmg">↓ dmg</a>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>现在可以自定义键盘快捷键。设置 → 键盘快捷键 → 自定义快捷键...</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.1.0
-      <small>(2026-04-04)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.1.0</span>
+            <span class="release-item__date">2026-04-04</span>
+            
+            <a class="release-item__download" href="https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.0/Petit-Player-0.1.0.dmg">↓ dmg</a>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>从Electron完全重写为原生Swift/AppKit。更轻量、更快速。</li>
 <li>PiP改进。更大的控制按钮、高清封面、显示艺术家名称。</li>
 <li>支持媒体键（播放/暂停、下一首、上一首）。</li>
@@ -228,106 +285,141 @@
 <li>键盘快捷键更改为<code>Ctrl+Option</code>组合（避免与其他应用冲突）。</li>
 <li>为内置浏览器中Google登录受阻的情况，在右键菜单中添加了"从Chrome导入登录信息"。</li>
 <li>支持9种语言：英语、韩语、日语、简体中文、西班牙语、德语、葡萄牙语、法语和土耳其语。</li>
-<li>移除广告拦截（AdBlock）。</li>
 <li>移除曲目更换通知。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.12
-      <small>(2020-05-17)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.12</span>
+            <span class="release-item__date">2020-05-17</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>修复广告拦截无限加载问题。</li>
 <li>修复自动播放问题。</li>
 <li>改善广告拦截加载时间。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.11
-      <small>(2020-04-23)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.11</span>
+            <span class="release-item__date">2020-04-23</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>支持调整PIP窗口大小。</li>
 <li>鼠标悬停时才显示PIP控制按钮。</li>
 <li>更换应用图标。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.10
-      <small>(2020-03-31)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.10</span>
+            <span class="release-item__date">2020-03-31</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>停止支持正在播放中更改播放时间的功能。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.9
-      <small>(2020-03-30)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.9</span>
+            <span class="release-item__date">2020-03-30</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>重新支持重启功能。</li>
 <li>小Bug修复。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.8
-      <small>(2020-03-29)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.8</span>
+            <span class="release-item__date">2020-03-29</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>自动更新小修复。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.7
-      <small>(2020-03-28)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.7</span>
+            <span class="release-item__date">2020-03-28</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>支持自动更新。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.6
-      <small>(2020-03-27)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.6</span>
+            <span class="release-item__date">2020-03-27</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>支持在正在播放中更改播放时间（侧边栏同样支持）。</li>
 <li>支持曲目更改时的通知。</li>
 <li>支持更改重复状态。</li>
 <li>修复了拖拽导致的bug。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.5
-      <small>(2020-03-20)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.5</span>
+            <span class="release-item__date">2020-03-20</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>支持离线模式。</li>
 <li>Bug修复。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.4
-      <small>(2020-03-15)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.4</span>
+            <span class="release-item__date">2020-03-15</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>支持广告拦截。</li>
 <li>支持PIP（画中画）。</li>
 <li>支持键盘快捷键（切换窗口、播放/停止、上一首、下一首）。</li>
@@ -336,160 +428,163 @@
 <li>Bug修复和UI改进。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.3
-      <small>(2020-02-13)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.3</span>
+            <span class="release-item__date">2020-02-13</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>支持登录时自动启动。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.2
-      <small>(2020-02-10)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.2</span>
+            <span class="release-item__date">2020-02-10</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>支持Touch Bar。</li>
 </ul>
 
-    
-    <h5 class="text-monospace">
-      v0.0.1
-      <small>(2020-02-07)</small>
-    </h5>
-
-    <ul>
+          </div>
+        </div>
+        
+        <div class="release-item">
+          <div class="release-item__meta">
+            <span class="release-item__tag">v0.0.1</span>
+            <span class="release-item__date">2020-02-07</span>
+            
+          </div>
+          <div class="release-item__body">
+            <ul>
 <li>屏幕顶部添加了后退/前进/刷新按钮。</li>
 <li>通过右键点击菜单栏图标添加了正常退出功能。</li>
 </ul>
 
-    
-    
-  </div>
-
-  <div id="credits" class="">
-    <p>&nbsp;</p>
-    <h3>致谢</h3>
-
-    <h5>开发者</h5>
-    <ul>
-<li>Joonyoung Yi [<a href="https://www.linkedin.com/in/joonyoungyi/">LinkedIn</a>] [<a href="https://github.com/JoonyoungYi">Github</a>]</li>
-<li>Kangmin Ahn [<a href="https://www.linkedin.com/in/kang-min-ahn-5615b9106/">LinkedIn</a>] [<a href="https://github.com/saltylight">Github</a>]</li>
-</ul>
-
-
-    <h5>支持我们</h5>
-
-    <ul>
-      <li>如果您喜欢这个程序，愿意请我们喝杯咖啡吗？</li>
-    </ul>
-
-    <ul style="list-style: none;">
-      <li>
+          </div>
+        </div>
         
-        <form style="display: inline;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onclick="gtag('event', 'paypal', {});">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <input type="hidden" name="hosted_button_id" value="V749YMW7J58ML">
-          <input type="hidden" name="currency_code" value="USD">
-          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-
-          <select name="os0">
-            <option value="Coffee * 1">Coffee * 1 $3.00 USD</option>
-            <option value="Coffee * 2">Coffee * 2 $6.00 USD</option>
-            <option value="Coffee * 3">Coffee * 3 $9.00 USD</option>
-          </select>
-
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        </form>
-
-        <a target="_blank" href="https://www.buymeacoffee.com/petitakm" onclick="gtag('event', 'buymeacoffee', {});">
-          <img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 170px !important;">
-        </a>
-        
-
-        <a target="_blank" href="/static/images/support/kakao-pay-qr.jpeg" onclick="gtag('event', 'kakaopay', {});">
-          <img src="/static/images/support/kakao-pay.jpg" style="height: 40px !important;width: 100px; margin-left: 8px; !important;">
-        </a>
-
-        <a target="_blank" href="/static/images/support/toss-qr.jpeg" onclick="gtag('event', 'toss', {});">
-          <img src="/static/images/support/toss.png" style="height: 40px !important;width: 118px; margin-left: 8px; !important;">
-        </a>
-      </li>
-    </ul>
-
-    <br />
-
-    <h5>特别感谢</h5>
-    <ul>
-<li>本产品的灵感来源于一位高中生开发的非官方<a href="https://macnews.tistory.com/1487">Bugs Music Player</a>。（<a href="http://www.bloter.net/archives/162026">相关文章</a>）</li>
-</ul>
-
-  </div>
-
-  <div id="backers" class="">
-    <p>&nbsp;</p>
-    <h3>支持者</h3>
-
-    <ul>
-      
-      
-      <li><strong>정승용</strong></li>
-      
-      <li><strong>조용석</strong></li>
-      
-      <li><strong>김규진</strong></li>
-      
-      <li><strong>박정환</strong></li>
-      
-      <li><strong>진성주</strong></li>
-      
-      <li><strong>김지호</strong></li>
-      
-      <li><strong>xguru</strong></li>
-      
-      <li><strong>유희동</strong></li>
-      
-      <li><strong>이나경</strong></li>
-      
-      <li><strong>양정원</strong></li>
-      
-      <li><strong>조현종</strong></li>
-      
-      <li><strong>홍승호</strong></li>
-      
-      
-    </ul>
-  </div>
-
-  <div id="license" class="">
-    <p>&nbsp;</p>
-    <h3>许可协议</h3>
-
-    <ul>
-<li>本产品免费。无论个人还是商业用途均可自由使用。</li>
-<li>Petit Youtube Music Player是Youtube的第三方应用程序，并非Youtube运营的站点。</li>
-</ul>
-
-  </div>
-
-  <div id="feedback" class="">
-    <p>&nbsp;</p>
-    <h3>反馈</h3>
-
-    <ul>
-<li>功能建议和Bug报告请在页面底部留言。其他问题请发送邮件！ <a href="../zh-Hans/joonyoungyi.official@gmail.com">joonyoungyi.official@gmail.com</a></li>
-</ul>
-
-    <p>&nbsp;</p>
-  </div>
-
+      </div>
+    </div>
+  </section>
 
   
-  <div class="comments">
+  <section id="credits" class="section section--light">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">Credits</h2>
+      </div>
+
+      <div class="credits-body">
+        <div class="credits-block">
+          <h3 class="credits-block__title">开发者</h3>
+          <div class="credits-block__body">
+            <p>Joonyoung Yi [<a href="https://www.linkedin.com/in/joonyoungyi/">LinkedIn</a>] [<a href="https://github.com/JoonyoungYi">Github</a>]<br>
+Kangmin Ahn [<a href="https://www.linkedin.com/in/kang-min-ahn-5615b9106/">LinkedIn</a>] [<a href="https://github.com/saltylight">Github</a>]</p>
+
+          </div>
+        </div>
+
+        <div class="credits-block">
+          <h3 class="credits-block__title">支持我们</h3>
+          <p class="credits-block__lede">如果您喜欢这个程序，愿意请我们喝杯咖啡吗？</p>
+          <div class="support-grid">
+            
+            <form class="support-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onclick="gtag('event', 'paypal', {});">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="V749YMW7J58ML">
+              <input type="hidden" name="currency_code" value="USD">
+              <label class="support-form__label" for="paypal-select">PayPal</label>
+              <select id="paypal-select" class="support-form__select" name="os0">
+                <option value="Coffee * 1">Coffee * 1 $3.00 USD</option>
+                <option value="Coffee * 2">Coffee * 2 $6.00 USD</option>
+                <option value="Coffee * 3">Coffee * 3 $9.00 USD</option>
+              </select>
+              <button class="support-form__submit" type="submit">PayPal</button>
+            </form>
+            <a class="support-pill" target="_blank" href="https://www.buymeacoffee.com/petitakm" onclick="gtag('event', 'buymeacoffee', {});">Buy Me A Coffee</a>
+            
+            <a class="support-pill" target="_blank" href="/static/images/support/kakao-pay-qr.jpeg" onclick="gtag('event', 'kakaopay', {});">KakaoPay QR</a>
+            <a class="support-pill" target="_blank" href="/static/images/support/toss-qr.jpeg" onclick="gtag('event', 'toss', {});">Toss QR</a>
+          </div>
+        </div>
+
+        <div class="credits-block">
+          <h3 class="credits-block__title">特别感谢</h3>
+          <div class="credits-block__body">
+            <p>本产品的灵感来源于一位高中生开发的非官方<a href="https://macnews.tistory.com/1487">Bugs Music Player</a>。（<a href="http://www.bloter.net/archives/162026">相关文章</a>）</p>
+
+          </div>
+        </div>
+
+        
+        <div class="credits-block">
+          <h3 class="credits-block__title">支持者</h3>
+          <div class="backer-grid">
+            
+            <span class="backer-pill"><strong>정승용</strong></span>
+            
+            <span class="backer-pill"><strong>조용석</strong></span>
+            
+            <span class="backer-pill"><strong>김규진</strong></span>
+            
+            <span class="backer-pill"><strong>박정환</strong></span>
+            
+            <span class="backer-pill"><strong>진성주</strong></span>
+            
+            <span class="backer-pill"><strong>김지호</strong></span>
+            
+            <span class="backer-pill"><strong>xguru</strong></span>
+            
+            <span class="backer-pill"><strong>유희동</strong></span>
+            
+            <span class="backer-pill"><strong>이나경</strong></span>
+            
+            <span class="backer-pill"><strong>양정원</strong></span>
+            
+            <span class="backer-pill"><strong>조현종</strong></span>
+            
+            <span class="backer-pill"><strong>홍승호</strong></span>
+            
+          </div>
+        </div>
+        
+
+        <div class="credits-block">
+          <h3 class="credits-block__title">许可协议</h3>
+          <div class="credits-block__body">
+            <p>本产品免费。无论个人还是商业用途均可自由使用。</p>
+<p>Petit YouTube Music Player是Youtube的第三方应用程序，并非Youtube运营的站点。</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback" class="section section--alt">
+    <div class="section__inner">
+      <div class="section__header">
+        <h2 class="section__title">反馈</h2>
+      </div>
+
+      <article class="feedback-card">
+        <div class="feedback-card__body">
+          <p>功能建议和Bug报告请在页面底部留言。其他问题请发送邮件！ <a href="../zh-Hans/joonyoungyi.official@gmail.com">joonyoungyi.official@gmail.com</a></p>
+
+        </div>
+        
+        <div class="feedback-card__comments comments">
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function() { this.page.identifier = "zh-Hans"; this.page.url = "https://getpetit.github.io/zh-Hans"; };
@@ -505,61 +600,22 @@
     rel="nofollow">comments powered by Disqus.</a>
 </noscript>
 </div>
-  
+        
+      </article>
+    </div>
+  </section>
 </main>
 
 
-
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
   <script>
-  // 언어 선택 드롭다운 클릭 시 수동 선택 플래그 저장
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function(el) {
+    document.querySelectorAll('.js-language-choice').forEach(function(el) {
       el.addEventListener('click', function() {
         localStorage.setItem('petit_lang_set', '1');
       });
     });
   });
-
-  // 자동 언어 감지 (수동 선택 시 스킵)
-  (async function() {
-    if (window.location.pathname !== '/') return;
-    if (localStorage.getItem('petit_lang_set')) return;
-
-    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    var map = {
-      'ko': '/ko', 'ja': '/ja', 'zh-cn': '/zh-Hans', 'zh-hans': '/zh-Hans', 'zh': '/zh-Hans',
-      'es': '/es', 'de': '/de', 'pt-br': '/pt-BR', 'pt': '/pt-BR',
-      'fr': '/fr', 'tr': '/tr'
-    };
-    var redirect = map[lang] || map[lang.split('-')[0]];
-
-    // 브라우저 언어로 감지 못한 경우 IP 기반 시도
-    if (!redirect) {
-      try {
-        var res = await fetch('https://ipapi.co/json/');
-        var data = await res.json();
-        var countryMap = {
-          'KR': '/ko',
-          'JP': '/ja',
-          'CN': '/zh-Hans', 'TW': '/zh-Hans', 'HK': '/zh-Hans',
-          'ES': '/es', 'MX': '/es', 'AR': '/es', 'CO': '/es', 'PE': '/es', 'CL': '/es',
-          'DE': '/de', 'AT': '/de', 'CH': '/de',
-          'FR': '/fr', 'BE': '/fr',
-          'TR': '/tr',
-          'BR': '/pt-BR', 'PT': '/pt-BR'
-        };
-        redirect = countryMap[data.country_code] || null;
-      } catch(e) {}
-    }
-
-    if (redirect) window.location.replace(redirect);
-  })();
   </script>
-
 </body>
 
 </html>
