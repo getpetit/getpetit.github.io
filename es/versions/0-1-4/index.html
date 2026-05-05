@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-08BTXEH8SS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-08BTXEH8SS');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+
+  <title>v0.1.4 — Petit Player</title>
+  
+  <meta property="og:title" content="Petit Player">
+  <meta property="og:description" content="Free macOS menubar app for YouTube Music.">
+  <meta property="og:image" content="https://getpetit.github.io/static/apple-touch-icon.png">
+  <meta property="og:url" content="https://getpetit.github.io/es/versions/0-1-4/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Petit Player">
+  <meta name="twitter:description" content="Free macOS menubar app for YouTube Music.">
+  <meta name="twitter:image" content="https://getpetit.github.io/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://getpetit.github.io/es/versions/0-1-4/">
+  <link rel="me" href="/llms.txt">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Petit Player",
+    "description": "Free macOS menubar app for YouTube Music. Control playback, use global shortcuts, PiP, and media keys without switching windows.",
+    "url": "https://getpetit.github.io",
+    "downloadUrl": "https://github.com/getpetit/petit-youtube-music-release/releases/download/v0.1.4/Petit-Player-0.1.4.dmg",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "macOS 12+",
+    "softwareVersion": "0.1.4",
+    "releaseNotes": "https://getpetit.github.io/#release-notes",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Joonyoung Yi",
+      "url": "https://github.com/JoonyoungYi"
+    },
+    "featureList": [
+      "YouTube Music control from the macOS menu bar",
+      "Global keyboard shortcuts (Ctrl+Option combos)",
+      "Media key support (F7/F8/F9)",
+      "Picture-in-Picture window",
+      "Wide Mode",
+      "Chrome login import via CDP",
+      "YouTube URL clipboard conversion",
+      "9 languages: English, Korean, Japanese, Simplified Chinese, Spanish, German, Portuguese, French, Turkish",
+      "Universal binary (Apple Silicon + Intel)",
+      "Launch at startup (macOS 13+)"
+    ],
+    "screenshot": "https://getpetit.github.io/static/apple-touch-icon.png",
+    "image": "https://getpetit.github.io/static/apple-touch-icon.png",
+    "license": "https://getpetit.github.io/#license",
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <script>
+  (function() {
+    if (window.location.pathname !== '/') return;
+    if (localStorage.getItem('petit_lang_set')) return;
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var map = {'ko':'/ko','ja':'/ja','zh-cn':'/zh-Hans','zh-hans':'/zh-Hans','zh':'/zh-Hans','es':'/es','de':'/de','pt-br':'/pt-BR','pt':'/pt-BR','fr':'/fr','tr':'/tr'};
+    var redirect = map[lang] || map[lang.split('-')[0]];
+    if (redirect) { window.location.replace(redirect); }
+  })();
+  </script>
+
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+
+  <script data-ad-client="ca-pub-5779215398308083" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+  
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-shell site-header__inner">
+      <a class="brand" href="/">Petit Player</a>
+
+      <nav class="site-nav site-nav--desktop" aria-label="Primary">
+        <a href="/es/#features">Características</a>
+        <a href="/es/#release-notes">Notas de la versión</a>
+        <a href="/es/#credits">Créditos</a>
+        <a href="/es/#feedback">Comentarios</a>
+      </nav>
+
+      <div class="header-actions">
+        <details class="site-nav site-nav--mobile">
+          <summary class="nav-toggle">&#9776;</summary>
+          <div class="nav-panel">
+            <a href="/es/#features">Características</a>
+            <a href="/es/#release-notes">Notas de la versión</a>
+            <a href="/es/#credits">Créditos</a>
+            <a href="/es/#feedback">Comentarios</a>
+            <div class="nav-panel__divider"></div>
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简体中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
+          </div>
+        </details>
+
+        <details class="language-switcher language-switcher--desktop-only">
+          <summary>Idioma</summary>
+          <div class="language-switcher__menu">
+            <a class="js-language-choice" href="/">English</a>
+            <a class="js-language-choice" href="/ko">한국어</a>
+            <a class="js-language-choice" href="/ja">日本語</a>
+            <a class="js-language-choice" href="/zh-Hans">简체中文</a>
+            <a class="js-language-choice" href="/es">Español</a>
+            <a class="js-language-choice" href="/de">Deutsch</a>
+            <a class="js-language-choice" href="/pt-BR">Português</a>
+            <a class="js-language-choice" href="/fr">Français</a>
+            <a class="js-language-choice" href="/tr">Türkçe</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  
+<div class="container" style="max-width:720px;margin:60px auto;padding:0 20px;">
+  <h2>v0.1.4</h2><ul>
+<li>Hardened media-key handling so headphone connect/disconnect events cannot start playback.</li>
+<li>Media keys now only pause playback; play and toggle signals are ignored.</li>
+<li>Added a short cooldown to suppress repeated device-triggered pause events.</li>
+</ul>
+
+</div>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.js-language-choice').forEach(function(el) {
+      el.addEventListener('click', function() {
+        localStorage.setItem('petit_lang_set', '1');
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>
